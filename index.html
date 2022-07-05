@@ -13,6 +13,10 @@
         box-sizing: border-box;
       }
 
+      :root {
+        --animationDuration: 5s;
+      }
+
       .parentDiv {
         min-height: 100vh;
         display: grid;
@@ -26,7 +30,7 @@
       #wink-face {
         transform-box: fill-box;
         transform-origin: center;
-        animation: faceInOut 5s ease-out infinite;
+        animation: faceInOut var(--animationDuration) ease-out infinite;
       }
 
       @keyframes faceInOut {
@@ -59,7 +63,7 @@
       #top {
         transform-box: fill-box;
         transform-origin: left top;
-        animation: topInOut 5s ease-in-out infinite;
+        animation: topInOut var(--animationDuration) ease-in-out infinite;
       }
 
       @keyframes topInOut {
@@ -82,7 +86,7 @@
       #mouth {
         transform-box: fill-box;
         transform-origin: left top;
-        animation: mouthInOut 5s ease-in-out infinite;
+        animation: mouthInOut var(--animationDuration) ease-in-out infinite;
       }
 
       @keyframes mouthInOut {
@@ -105,7 +109,7 @@
       #left-eye {
         transform-box: fill-box;
         transform-origin: center;
-        animation: wink 5s ease-in-out infinite;
+        animation: wink var(--animationDuration) ease-in-out infinite;
       }
 
       @keyframes wink {
