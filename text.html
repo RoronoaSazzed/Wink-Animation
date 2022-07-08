@@ -171,12 +171,12 @@
         }
 
         61%,
-        84% {
+        85% {
           opacity: 1;
           transform: scaleY(1);
         }
 
-        91% {
+        90% {
           transform: scaleY(0);
         }
 
@@ -198,18 +198,18 @@
           transform: rotate(0deg);
         }
 
-        50% {
+        52% {
           opacity: 1;
         }
 
         65% {
           opacity: 1;
-          transform: scale(1.2) rotate(90deg);
+          transform: rotate(90deg);
         }
 
         100% {
           opacity: 1;
-          transform: scale(1.2) rotate(90deg);
+          transform: rotate(90deg);
         }
       }
 
@@ -277,6 +277,71 @@
 
         100% {
           opacity: 1;
+        }
+      }
+
+      #top {
+        transform-box: fill-box;
+        transform-origin: left top;
+        animation: topInOut 3s ease-in-out 21 forwards;
+      }
+
+      @keyframes topInOut {
+        0%,
+        49% {
+          opacity: 0;
+        }
+
+        50% {
+          opacity: 1;
+        }
+
+        75% {
+          opacity: 1;
+          transform: scale(1) rotate(0deg);
+        }
+
+        85%,
+        90% {
+          opacity: 1;
+          transform: scale(1.1) rotate(-4deg);
+        }
+
+        100% {
+          transform: scale(1) rotate(0deg);
+        }
+      }
+
+      #mouth {
+        transform-box: fill-box;
+        transform-origin: left top;
+        animation: mouthInOut 3s ease-in-out 21 forwards;
+      }
+
+      @keyframes mouthInOut {
+        0%,
+        49% {
+          opacity: 0;
+          transform: scale(1) rotate(0deg);
+        }
+
+        50% {
+          opacity: 1;
+          transform: scale(1) rotate(0deg);
+        }
+
+        75% {
+          transform: scale(1) rotate(0deg);
+        }
+
+        85%,
+        90% {
+          opacity: 1;
+          transform: scale(1.3) rotate(4deg);
+        }
+
+        100% {
+          transform: scale(1) rotate(0deg);
         }
       }
     </style>
@@ -398,43 +463,52 @@
             />
           </g>
 
-          <circle id="left-eye" r="15" fill="#17174C">
-            <animateMotion
-              keyTimes="0; 1"
-              keySplines=".42 0 1 1;
+          <g id="top">
+            <circle id="left-eye" r="18" fill="#17174C">
+              <animateMotion
+                keyTimes="0; 1"
+                keySplines=".42 0 1 1;
                       0 0 .59 1;"
-              dur=".25s"
-              begin="1.75s; 4.75s; 7.75s; 10.75s; 13.75s; 16.75s; 19.75s; 22.75s; 25.75s; 28.75s; 31.75s; 34.75s; 37.75s; 40.75s; 43.75s; 46.75s; 49.75s; 52.75s; 55.75s; 58.75s; 61.75s;"
-              end="2s; 5; 8s; 11s; 14s; 17s; 20s; 23s; 26s; 29s; 32s; 35s; 38s; 41s; 44s; 47s; 50s; 53s; 56s; 59s; 62s;"
-              fill="freeze"
-              path="M948.769 477.218C948.769 425.255 858.769 425.181 858.769 477.218"
-            />
-          </circle>
+                dur=".25s"
+                begin="1.75s; 4.75s; 7.75s; 10.75s; 13.75s; 16.75s; 19.75s; 22.75s; 25.75s; 28.75s; 31.75s; 34.75s; 37.75s; 40.75s; 43.75s; 46.75s; 49.75s; 52.75s; 55.75s; 58.75s; 61.75s;"
+                end="2s; 5; 8s; 11s; 14s; 17s; 20s; 23s; 26s; 29s; 32s; 35s; 38s; 41s; 44s; 47s; 50s; 53s; 56s; 59s; 62s;"
+                fill="freeze"
+                path="M948.769 477.218C948.769 425.255 858.769 425.181 858.769 477.218"
+              />
+            </circle>
 
-          <circle id="right-eye" r="15" fill="#17174C">
-            <animateMotion
-              keyTimes="0; 1"
-              keySplines=".42 0 1 1;
+            <!-- begin="1s"
+                end="1.25s" -->
+
+            <circle id="right-eye" r="18" fill="#17174C">
+              <animateMotion
+                keyTimes="0; 1"
+                keySplines=".42 0 1 1;
                   0 0 .59 1;"
-              dur=".25s"
-              begin="1.5s; 4.5s; 7.5s; 10.5s; 13.5s; 16.5s; 19.5s; 22.5s; 25.5s; 28.5s; 31.5s; 34.5s; 37.5s; 40.5s; 43.5s; 46.5s; 49.5s; 52.5s; 55.5s; 58.5s; 61.5s;"
-              end="1.75s; 4.75s; 7.75s; 10.75s; 13.75s; 16.75s; 19.75s; 22.75s; 25.75s; 28.75s; 31.75s; 34.75s; 37.75s; 40.75s; 43.75s; 46.75s; 49.75s; 52.75s; 55.75s; 58.75s; 61.75s;"
-              fill="freeze"
-              path="M1481 669C1366.67 523 1133 322 949 476"
-            />
-          </circle>
+                dur=".25s"
+                begin="1.5s; 4.5s; 7.5s; 10.5s; 13.5s; 16.5s; 19.5s; 22.5s; 25.5s; 28.5s; 31.5s; 34.5s; 37.5s; 40.5s; 43.5s; 46.5s; 49.5s; 52.5s; 55.5s; 58.5s; 61.5s;"
+                end="1.75s; 4.75s; 7.75s; 10.75s; 13.75s; 16.75s; 19.75s; 22.75s; 25.75s; 28.75s; 31.75s; 34.75s; 37.75s; 40.75s; 43.75s; 46.75s; 49.75s; 52.75s; 55.75s; 58.75s; 61.75s;"
+                fill="freeze"
+                path="M1481 669C1366.67 523 1133 322 949 476"
+              />
+            </circle>
 
-          <g id="letter-d">
-            <path
-              d="M899.492 575.992H855.691V628.147V680.301H899.492C946.453 680.301 954.581 649.144 954.581 628.147C954.581 607.15 946.453 575.992 899.492 575.992ZM899.492 661.562H878.269V628.147V594.732H899.266C922.521 594.732 931.552 610.31 931.552 628.147C931.552 645.983 922.747 661.562 899.492 661.562Z"
-              fill="#17174C"
-            />
+            <!-- begin="1.5s"
+                end="1.75s" -->
+
+            <g id="letter-l">
+              <path
+                id="l-shape"
+                d="M470.625 660.75H526.5V680.125H448V576.031H470.625V660.75Z"
+                fill="#17174C"
+              />
+            </g>
           </g>
 
-          <g id="letter-l" transform="translate(0, -10)">
+          <g id="mouth">
             <path
-              id="l-shape"
-              d="M470.625 660.75H526.5V680.125H448V576.031H470.625V660.75Z"
+              id="letter-d"
+              d="M894.25 575.5L860.5 575.5L860.5 626.5L860.5 680H897.776C936 680 946 647.497 946 626.5C946 605.503 933.75 575.5 894.25 575.5ZM894.25 661.5H884.5L884.5 626.5L884.5 594H894.25C909.5 594 923 608.664 923 626.5C923 644.336 913.75 661.5 894.25 661.5Z"
               fill="#17174C"
             />
           </g>
